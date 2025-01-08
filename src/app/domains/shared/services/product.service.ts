@@ -25,6 +25,10 @@ export class ProductService {
     );
   }
 
+  getOne(id:string){
+    return this.http.get<Product>('https://api.escuelajs.co/api/v1/products/${id}')
+  }
+
   private cleanAndParseImageUrl(image: string): string {
     let cleanedImage = image.replace(/^\["?|"?]$/g, '');
     try {
